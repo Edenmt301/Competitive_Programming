@@ -1,6 +1,6 @@
 #addition
-a=int(input())
-b=int(input())
+a=10**1000
+b=-2*(10**1000)
 
 def addition(a,b,bothneg):
     carry=0
@@ -21,11 +21,12 @@ def addition(a,b,bothneg):
             if c>9:
                 answer=str(c%10) + answer
                 c = c//10
-                carry=str(c)
+                carry=c
             else:
                 answer=str(c) + answer
                 carry=0
             i-=1
+    answer=str(carry) + answer
     if bothneg==True:
         answer='-' + answer
     return(int(answer))

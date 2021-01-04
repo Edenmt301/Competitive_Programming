@@ -17,9 +17,10 @@ while i>=0:
         if c>9:
             answer=str(c%10) + answer
             c = c//10
-            carry=str(c)
+            carry=c
         else:
             answer=str(c) + answer
             carry=0
         i-=1
-print(answer)
+answer=str(carry) + answer
+print(int(answer))

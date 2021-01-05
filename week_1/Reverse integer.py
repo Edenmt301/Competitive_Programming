@@ -1,7 +1,7 @@
 x=int(input())
 def reverse( x: int) -> int:
         if x <-2**31 or x >(2**31)-1:
-            return(0)
+            return 0
         inverted=''
         negative=False
         x=str(x)
@@ -12,8 +12,8 @@ def reverse( x: int) -> int:
             inverted =i + inverted
         inverted=int(inverted)
         if int(inverted) <-2**31 or int(inverted) >(2**31)-1:
-            return(0)
+            return 0
         if negative==True:
             inverted ='-' + str(inverted) 
-        return(inverted)
+        return inverted
 print(reverse(x))

@@ -29,7 +29,7 @@ def addition(a,b,bothneg):
     answer=str(carry) + answer
     if bothneg==True:
         answer='-' + answer
-    return(int(answer))
+    return int(answer)
 def negAddition(a,b):
     carry=0
     answer=''
@@ -64,7 +64,7 @@ def negAddition(a,b):
             i-=1
     if neg==True:
         answer='-' + answer
-    return(int(answer))
+    return int(answer)
 def choose(a,b):
     bothneg=False
     if a<0 and b<0:

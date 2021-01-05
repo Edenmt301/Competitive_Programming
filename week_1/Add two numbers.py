@@ -41,4 +41,4 @@ class Solution(object):
             temp.next=ListNode(carry)
             
             
-        return(head)
+        return head

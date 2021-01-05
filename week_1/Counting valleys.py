@@ -17,5 +17,5 @@ def counter(steps,path):
             slope -=1
         if i=='U' and slope==0:
             valley +=1
-    return(valley)
+    return valley
 print(counter(8,input()))    

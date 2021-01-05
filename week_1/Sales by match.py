@@ -22,5 +22,5 @@ def socks(n,ar):
                 break
         if len(ar)==0:
             break
-    return(count)
+    return count
 print(socks(n,ar))

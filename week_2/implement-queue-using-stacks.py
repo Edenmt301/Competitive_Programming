@@ -16,19 +16,18 @@ class MyQueue(object):
         """
         length=len(self.items1)
         if length==0:
-            self.items1.insert(0,x)
+            self.items1.append(x)
         else:
             i=0
             while i < length:
-                self.items2.insert(0,self.items1[i])
-                self.items1.pop(0)
-                length-=1
-            self.items2.insert(0,x)
+                self.items2.append(self.items1.pop())
+                i+=1
+            self.items2.append(x)
             length=len(self.items2)
+            i=0
             while i < length:
-                self.items1.insert(0,self.items2[i])
-                self.items2.pop(0)
-                length-=1
+                self.items1.append(self.items2.pop())
+                i+=1
         
 
     def pop(self):
@@ -37,7 +36,7 @@ class MyQueue(object):
         :rtype: int
         """
         if len(self.items1)>0:
-            return self.items1.pop(0)
+            return self.items1.pop()
 
     def peek(self):
         """
@@ -45,7 +44,7 @@ class MyQueue(object):
         :rtype: int
         """
         if len(self.items1)>0:
-            return self.items1[0]
+            return self.items1[-1]
 
     def empty(self):
         """

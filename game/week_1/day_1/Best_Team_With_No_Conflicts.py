@@ -5,15 +5,17 @@ class Solution(object):
         :type ages: List[int]
         :rtype: int
         """
-        n = len(scores)
-        dp = [0] * n
-        ans = 0
-        players = [(ages[i], scores[i]) for i in range(n)]
-        players.sort(key = lambda x: (x[0],x[1]))
-        for i in range(n):
-            dp[i] = players[i][1]
+         dp = [0] * len(scores)
+        answer = 0
+        elements = []
+        for i in range(len(scores)):
+            elements.append((ages[i], scores[i]))
+
+        elements.sort(key = lambda x: (x[0],x[1]))
+        for i in range(len(scores)):
+            dp[i] = elements[i][1]
             for j in range(i):
-                if players[j][1] <= players[i][1]:
-                    dp[i] = max(dp[i], dp[j] + players[i][1])
-            ans = max(ans, dp[i])
+                if elements[j][1] <= elements[i][1]:
+                    dp[i] = max( dp[j] + elements[i][1], dp[i])
+            ans = max(answer, dp[i])
         return ans
